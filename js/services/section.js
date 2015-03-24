@@ -7,6 +7,7 @@ angular.module('PSFcreator')
         self.titulo = titulo || '';
         self.instrucciones = instrucciones || '';
         self.sections = [];
+        self.fields=[];
         
     }
     return Section;
