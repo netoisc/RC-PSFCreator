@@ -1,0 +1,18 @@
+<h3>Crear nueva sección</h3>
+  
+   <form role="form" name="frmSection" novalidate  ng-submit="frmSection.$valid && newSection.save()">
+    <div class="form-group">
+        <label for="psfSectionNameModal">Nombre</label>
+        <input type="text" class="form-control" id="psfSectionNameModal"  placeholder="Nombre de la sección" required ng-model="newSection.section.name" >
+    </div>
+    <div class="form-group">
+        <label for="psfSectionTitleModal">Título</label>
+        <input type="text" class="form-control" id="psfSectionTitleModal" placeholder="Título de la sección" ng-model="newSection.section.titulo" required>
+    </div>
+    <div class="form-group">
+        <label for="psfSectionInstrucctionsModal">Instrucciones</label>
+        <textarea class="form-control" type="text" id="psfSectionInstrucctionsModal" placeholder="Escribe las instrucciones" ng-model="newSection.section.instrucciones" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Save changes</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal" >Cancel</button>
+</form>
