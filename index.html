@@ -30,6 +30,7 @@
             <br>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalSection">Agregar Sección</button>
             <a href="#/section/new">Agregar section</a>
+            <a href="#/field/new">Agregar field</a>
             <hr>
             <div ng-view>
                 
@@ -64,6 +65,7 @@
         </div>
         <div id="actions">
             <button  type="button" class="btn btn-primary" name="btnSave">Save</button>
+            <a href="#/field/new">Agregar field</a>
             
         </div>
     </div>
@@ -108,8 +110,11 @@
     <script type="text/javascript" src="/js/routes.js"></script>
     <script type="text/javascript" src="/js/services/psf.js"></script>
     <script type="text/javascript" src="/js/services/section.js"></script>
+    
+    <!--Controllers-->
     <script type="text/javascript" src="/js/controllers/ventanilla-create-controller.js"></script>
     <script type="text/javascript" src="/js/controllers/section-create-controller.js"></script>
+    <script type="text/javascript" src="/js/controllers/field-create-controller.js"></script>
     
 </body>
 
