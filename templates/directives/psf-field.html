@@ -1,0 +1,11 @@
+angular.module("PSFcreator")
+.directive('psfField',function(){
+    return{
+        restrict:"E",
+        scope:{
+            section:"="
+        },
+        templateUrl : "templates/directives/psf-field.html"
+    };
+});
+           
