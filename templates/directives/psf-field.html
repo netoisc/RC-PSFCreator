@@ -1,11 +1,12 @@
-angular.module("PSFcreator")
-.directive('psfField',function(){
-    return{
-        restrict:"E",
-        scope:{
-            section:"="
-        },
-        templateUrl : "templates/directives/psf-field.html"
-    };
-});
-           
+<tr>  
+  <td>{{Nombre}}</td>
+  <td>{{Tipo}}</td>
+  <td>{{DisplayName}}</td>
+  <td><span class="badge">{{Validators}}</span></td>
+  <td><span class="badge">{{Promotions}}</span></td>
+  <td>
+        <div><a ng-href=""><span class="glyphicon glyphicon-pencil"></a></span>
+             <a ng-href=""><span class="glyphicon glyphicon-remove"></a></span>
+        </div>
+  </td>
+</tr>

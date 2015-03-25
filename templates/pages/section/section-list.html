@@ -20,9 +20,50 @@
                     <label for="psfSectionInstructions">Instructions : </label>
                     <p readonly="readonly" id="psfSectionInstructions">{{section.instrucciones}}</p>
                 </div>
+                
                 <div class="form-group">
-                    <span>{{section.fields.length}}</span>
+                        <span>{{section.fields.length}}</span>
+                    </div>
+                
+                <div class="panel panel-default">
+                  <!-- Default panel contents -->
+                  <div class="panel-heading">Fields  <!--span>{ {{section.fields.length}} }</span--></div>
+                    
+                    
+
+                  <!-- Table -->
+                  <table class="table" id="">
+                      <thead>
+                          <tr><th>Nombre</th><th>Tipo</th><th>Display Name</th><th># Validators</th><th>Promotions</th><th>Action</th></tr>
+                      </thead>
+                      <tbody  >
+                          <tr ng-repeat="field in section.fields" >
+                              <td>{{field.Nombre}}</td>
+                              <td>{{field.Tipo}}</td>
+                              <td>{{field.DisplayName}}</td>
+                              <td><span class="badge">{{field.validators.length}}</span></td>
+                              <td><span class="badge">{{field.promotions.length}}</span></td>
+                              <td>
+                                    <div><span class="glyphicon glyphicon-pencil"></span>
+                                         <span class="glyphicon glyphicon-remove"></span>
+                                    </div>
+                              </td>
+                            </tr>
+                        <!--tr ng-repeat="field in section.fields">
+                          <psf-field Nombre="field.Nombre"
+                                    Tipo="field.Tipo"
+                                    Validators="field.Tipo"
+                                    Tipo="field.validators.length"
+                                    Promotions="field.promotions.length"
+                                    id="field.name">
+                          </psf-field>
+                            
+                        </tr-->
+                          
+                      </tbody>
+                  </table>
                 </div>
+                
                 <div class="right">
                     <a href="#/field/create/{{section.name}}">Add Field</a>
                 </div>
