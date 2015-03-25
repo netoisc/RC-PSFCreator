@@ -1,10 +1,14 @@
-<div class="accordion" style="border:1px solid gray;" id="accordion">
-   <div class="accordion-group" ng-repeat="section in psf.sections">    
+<div id="sectionList" class="row">
+  <header>
+      <h3 ng-if="ventanilla.hasSections()">Secciones del psf</h3>
+  </header>
+   <div class="accordion" id="accordion">
+    <div class="accordion-group" ng-repeat="section in psf.sections">
         <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"  data-target="#section_Panel_{{section.name}}" >
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" data-target="#section_Panel_{{section.name}}">
                      Secci&oacute;n : {{section.name}}
                     </a>
-                    
+
         </div>
         <div id="section_Panel_{{section.name}}" class="accordion-body collapse out">
             <div class="panel-body">
@@ -20,40 +24,51 @@
                     <label for="psfSectionInstructions">Instructions : </label>
                     <p readonly="readonly" id="psfSectionInstructions">{{section.instrucciones}}</p>
                 </div>
-                
-                <div class="form-group">
-                        <span>{{section.fields.length}}</span>
-                    </div>
-                
-                <div class="panel panel-default">
-                  <!-- Default panel contents -->
-                  <div class="panel-heading">Fields  <!--span>{ {{section.fields.length}} }</span--></div>
-                    
-                    
 
-                  <!-- Table -->
-                  <table class="table" id="">
-                      <thead>
-                          <tr><th>Nombre</th><th>Tipo</th><th>Display Name</th><th># Validators</th><th>Promotions</th><th>Action</th></tr>
-                      </thead>
-                      <tbody  >
-                          <tr ng-repeat="field in section.fields" >
-                              <td>{{field.Nombre}}</td>
-                              <td>{{field.Tipo}}</td>
-                              <td>{{field.DisplayName}}</td>
-                              <td><span class="badge">{{field.validators.length}}</span></td>
-                              <td><span class="badge">{{field.promotions.length}}</span></td>
-                              <td>
+                <div class="form-group">
+                    <span>{{section.fields.length}}</span>
+                </div>
+
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">Fields
+                        <!--span>{ {{section.fields.length}} }</span-->
+                    </div>
+
+
+
+                    <!-- Table -->
+                    <table class="table" id="">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Tipo</th>
+                                <th>Display Name</th>
+                                <th># Validators</th>
+                                <th>Promotions</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="field in section.fields">
+                                <td>{{field.Nombre}}</td>
+                                <td>{{field.Tipo}}</td>
+                                <td>{{field.DisplayName}}</td>
+                                <td><span class="badge">{{field.validators.length}}</span>
+                                </td>
+                                <td><span class="badge">{{field.promotions.length}}</span>
+                                </td>
+                                <td>
                                     <div>
                                         <a ng-href="#/field/edit/{{field.Nombre}}">
-                                        <span class="glyphicon glyphicon-pencil"></span>
+                                            <span class="glyphicon glyphicon-pencil"></span>
                                         </a>
-                                        
-                                         <span class="glyphicon glyphicon-remove"></span>
+
+                                        <span class="glyphicon glyphicon-remove"></span>
                                     </div>
-                              </td>
+                                </td>
                             </tr>
-                        <!--tr ng-repeat="field in section.fields">
+                            <!--tr ng-repeat="field in section.fields">
                           <psf-field Nombre="field.Nombre"
                                     Tipo="field.Tipo"
                                     Validators="field.Tipo"
@@ -63,16 +78,17 @@
                           </psf-field>
                             
                         </tr-->
-                          
-                      </tbody>
-                  </table>
+
+                        </tbody>
+                    </table>
                 </div>
-                
+
                 <div class="right">
                     <a href="#/field/create/{{section.name}}">Add Field</a>
                 </div>
             </div>
         </div>
-    
+
+    </div>
 </div>
 </div>

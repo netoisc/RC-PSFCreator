@@ -49,23 +49,27 @@
         </div>
     </nav>
 
-    <div class="container col-sm-12">
-        <div class="main row">
-            <section class="col-sm-6">
-                <h2>Crear nuevo PSF</h2>
-                <div>
-                    <label for="psfName">Nombre:</label>
-                    <input type="text" name="psfName" value="{{psf.name}}" />
+    <div class="container">
+        <div class="main row col-sm-12">
+            <div class="row">
+                <h2 class="col-sm-12">Crear nuevo PSF</h2>
+            </div>
+            <div class="row">
+                <section class="col-sm-6">
+                    <div>
+                        <label class="col-sm-6 text-right" for="psfName">Nombre:</label>
+                        <input type="text" name="psfName" value="{{psf.name}}" />
+                    </div>
+                    <div>
+                        <label for="psfTitulo" class="col-sm-6 text-right">Titulo:</label>
+                        <input type="text" name="psfTitulo" value={{psf.title}} />
+                    </div>
+                </section>
+                <div class="col-sm-6">
+                    <button type="button" class="btn btn-default">
+                        <a href="#/section/new">Agregar secci&oacute;n</a>
+                    </button>
                 </div>
-                <div>
-                    <label for="psfTitulo">Titulo:</label>
-                    <input type="text" name="psfTitulo" value={{psf.title}} />
-                </div>
-            </section>
-            <div class="col-sm-6">
-                <button type="button" class="btn btn-default">
-                <a href="#/section/new">Agregar secci&oacute;n</a>
-                </button>
             </div>
         </div>
         <div ng-view>
