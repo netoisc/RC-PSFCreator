@@ -44,7 +44,11 @@
                               <td><span class="badge">{{field.validators.length}}</span></td>
                               <td><span class="badge">{{field.promotions.length}}</span></td>
                               <td>
-                                    <div><span class="glyphicon glyphicon-pencil"></span>
+                                    <div>
+                                        <a ng-href="#/field/edit/{{field.Nombre}}">
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                        </a>
+                                        
                                          <span class="glyphicon glyphicon-remove"></span>
                                     </div>
                               </td>

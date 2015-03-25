@@ -15,6 +15,11 @@ angular.module('PSFcreator').config(function($routeProvider){
        controller:'FieldCreateCtrl',
        controllerAs:'createField'
    })
+    .when('/field/edit/:idfield',{
+       templateUrl: 'templates/pages/field/edit.html',
+       controller:'FieldCreateCtrl',
+       controllerAs:'createField'
+   })
    .when('/', {
        templateUrl:'templates/pages/section/section-list.html'       
    });
