@@ -1,0 +1,38 @@
+<h3>Agregar field a secci&oacute;n: {{field.sectionname}}</h3>
+<form role="form" name="frmEditField" novalidate ng-submit="field.updateField()">
+
+    <div class="form-group">
+        <label for="selectFieldType">Tipo field</label>
+        <select class="form-control" id="selectFieldType" ng-model="field.Tipo">
+            <option value="cfditype">CFDI</option>
+            <option value="choiceType">Choice</option>
+            <option value="dateType">Date</option>
+            <option value="dateTimeType">Time</option>
+            <option value="dropDownType">Dropdown</option>
+            <option value="fileExtension">File</option>
+            <option value="textType">Text</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="fieldName">Nombre</label>
+        <input type="text" class="form-control" id="fieldName" ng-model="field.Nombre" placeholder="Nombre del campo">
+    </div>
+    <div class="form-group">
+        <label for="fieldDisplayName">Display Name</label>
+        <input type="text" ng-model="field.DisplayName" class="form-control" id="fieldDisplayName" placeholder="Nombre a desplegar en la forma ">
+    </div>
+
+
+    <div class="form-group">
+        <label for="fieldHelpText">Help Text</label>
+        <input type="text" ng-model="field.HelpText" class="form-control" id="fieldHelpText" placeholder="Texto de ayudar">
+    </div>
+    <div class="form-group" id="divFieldInstrucctions">
+        <label for="fieldInstrucctions">Instrucctions</label>
+        <textarea ng-model="field.Instructions" class="form-control" id="fieldInstrucctions" placeholder="Escribe las instrucciones"> </textarea>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Update Field</button>
+        <button type="button" class="btn btn-default" ng-click="field.cancel()">Cancel</button>
+    </div>

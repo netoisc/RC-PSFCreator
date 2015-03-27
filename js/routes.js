@@ -10,7 +10,12 @@ angular.module('PSFcreator').config(function($routeProvider){
        controller:'FieldCreateCtrl',
        controllerAs:'createField'
    })
-    .when('/section/add/:idParentSection',{
+   .when('/field/edit/:idSection/:idField',{
+       templateUrl: 'templates/pages/field/edit-field.html',
+       controller:'FieldEditCtrl',
+       controllerAs:'editField'
+   })
+   .when('/section/add/:idParentSection',{
        templateUrl: 'templates/pages/section/section-new.html',
        controller:'CreateSectionCtrl',
        controllerAs:'newSection'
