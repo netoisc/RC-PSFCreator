@@ -1,39 +1,48 @@
 <div id="sectionList" class="row">
     <header>
-        <h2 ng-if="ventanilla.hasSections()">Secciones</h2>
+        <h2 ng-if="psf.hasSections()">Secciones</h2>
     </header>
     <div class="panel-group" id="accordion">
         <div class="panel panel-default" ng-repeat="section in psf.sections">
             <div class="panel-heading">
                 <h3 class="panel-title">
+                <span>{{$index}} - Secci&oacute;n: </span>
                 <a data-toggle="collapse" data-parent="#accordion" data-target="#section_Panel_{{section.name}}">
-                    <span>{{$index}}-Secci&oacute;n: </span>{{section.name}}
-                    </a>
+                    {{section.name}}
+                    </a>                    
                 </h3>
             </div>
             <div id="section_Panel_{{section.name}}" class="panel-collapse collapse out">
                 <div class="panel-body">
-                    <div>
-                        <span>Nombre: </span>
-                        <label id="psfSectionName">{{section.name}}</label>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div>
+                                <span>Nombre: </span>
+                                <label id="psfSectionName">{{section.name}}</label>
+                            </div>
+                            <div>
+                                <span>T&iacute;tulo: </span>
+                                <label id="psfSectionTitle">{{section.titulo}}</label>
+                            </div>
+                            <div>
+                                <span>Instrucciones: </span>
+                                <p>{{section.instrucciones}}</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <button class="btn btn-warning pull-right" ng-click="psf.deleteSection(section)">Eliminar esta secci&oacute;n</button>
+                        </div>
                     </div>
-                    <div>
-                        <span>T&iacute;tulo: </span>
-                        <label id="psfSectionTitle">{{section.titulo}}</label>
-                    </div>
-                    <div>
-                        <span>Instrucciones: </span>
-                        <p>{{section.instrucciones}}</p>
-                    </div>
+                    <div class="row">
                     <div class="panel panel-default">
                         <!-- Default panel contents -->
                         <div class="panel-heading">
                             <h4>N&uacute;mero de fields:<span class="badge">{{section.fields.length}}</span>
                             <a class="pull-right" href="#/field/create/{{section.name}}">Agregar Field</a>
                             </h4>
-                            
+
                         </div>
-                        <!-- Table -->
+                        <!-- Table for fields-->
                         <table class="table">
                             <thead>
                                 <tr>
@@ -47,6 +56,33 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                    </div>
+                    <div class="row"> <!-- tabla for sections sons-->
+                       <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">
+                            <h4>N&uacute;mero de sections:<span class="badge">{{section.sections.length}}</span>
+                            <a class="pull-right" href="#/section/add/{{section.name}}">Agregar secci&oacute;n</a>
+                            </h4>
+
+                        </div>
+                        <!-- Table for fields-->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>                                    
+                                    <th>Numero de hijos</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr psf-tr-section ng-repeat="sect in section.sections" nombre="sect.name" hijos="sect.sections.length" id="sect.name">
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                        
                     </div>
                 </div>
             </div>
