@@ -23,7 +23,7 @@ angular.module('PSFcreator')
     
     
     
-    $scope.section.field = editField;
+    $scope.field = editField;
     
     $scope.field.section = section;
     $scope.field.oldField = editField.Nombre;
