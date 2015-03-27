@@ -1,8 +1,6 @@
 angular.module('PSFcreator')
 .controller('FieldEditCtrl',function($scope,$routeParams,$location){
     var self = this;
-    
-    
     self.field={};
     var nameSection = $routeParams.idSection;    
     self.section =$scope.findSectionName(nameSection);
@@ -11,10 +9,10 @@ angular.module('PSFcreator')
     }
     
     
-    self.addField = function(){
-        debugger;
+    self.addField = function(){        
         self.section.fields.push(self.field);
         $location.path('/');
     }
+    
     
 });
