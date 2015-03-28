@@ -31,8 +31,47 @@
         <label for="fieldInstrucctions">Instrucctions</label>
         <textarea ng-model="createField.field.Instructions" class="form-control" id="fieldInstrucctions" placeholder="Escribe las instrucciones"> </textarea>
     </div>
+    
+    <!-- tabla for validators-->
+     <div class="row"> 
+         
+       <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+            <h4>N&uacute;mero de validators:<span class="badge">{{createField.field.validators.length}}</span>
+            <a class="pull-right" >Agregar validator</a>
+            </h4>
+
+        </div>
+        <!-- Table for fields-->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Validator</th>                                    
+                    <th>Value</th>
+                    <th>Message</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="validator in createField.field.validators">
+                <!--tr psf-tr-section ng-repeat="sect in section.sections" nombre="sect.name" hijos="sect.sections.length" id="sect.name">
+                </tr-->
+
+                <tr>
+                    <td>{{validator.type}}</td>                                    
+                    <td>{{validator.value}}</td>                                                  
+                    <td>{{validator.message}}</td>                                    
+                    <td>Action</td>                                    
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+    </div>
 
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Salvar Field</button>
         <button type="button" class="btn btn-default" ng-click="createField.cancel()">Cancel</button>
     </div>
+    
+    
