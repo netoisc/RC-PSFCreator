@@ -1,0 +1,41 @@
+
+
+
+<h3>Agregar field a secci&oacute;n: {{createField.section.name}}</h3>
+<form role="form" name="frmField" novalidate ng-submit="createField.addField()">
+
+    <div class="form-group">
+        <label for="selectFieldType">Tipo field</label>
+        <select class="form-control" id="selectFieldType" ng-model="createField.field.type">
+            <option value="cfditype">CFDI</option>
+            <option value="choiceType">Choice</option>
+            <option value="dateType">Date</option>
+            <option value="dateTimeType">Time</option>
+            <option value="dropDownType">Dropdown</option>
+            <option value="fileExtension">File</option>
+            <option value="textType">Text</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="fieldName">Nombre</label>
+        <input type="text" class="form-control" id="fieldName" ng-model="createField.field.name" placeholder="Nombre del campo">
+    </div>
+    <div class="form-group">
+        <label for="fieldDisplayName">Display Name</label>
+        <input type="text" ng-model="createField.field.displayName" class="form-control" id="fieldDisplayName" placeholder="Nombre a desplegar en la forma ">
+    </div>
+
+
+    <div class="form-group">
+        <label for="fieldHelpText">Help Text</label>
+        <input type="text" ng-model="createField.field.helpText" class="form-control" id="fieldHelpText" placeholder="Texto de ayudar">
+    </div>
+    <div class="form-group" id="divFieldDescription">
+        <label for="fieldInstrucctions">Description</label>
+        <input type="text" ng-model="createField.field.description" class="form-control" id="fieldHelpText" placeholder="Pequeña descripción">
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Salvar Field</button>
+        <button type="button" class="btn btn-default" ng-click="createField.cancel()">Cancel</button>
+    </div>

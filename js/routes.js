@@ -6,13 +6,18 @@ angular.module('PSFcreator').config(function($routeProvider){
        controllerAs: 'newSection'
    })   
    .when('/field/create/:idSection',{
-       templateUrl: 'templates/pages/field/edit.html',
+       templateUrl: 'templates/pages/field/create.html',
        controller:'FieldCreateCtrl',
        controllerAs:'createField'
    })
-   .when('/field/edit/:idSection/:idField',{
+   .when('/field/edit/:idSection/:index',{
        templateUrl: 'templates/pages/field/edit-field.html',
        controller:'FieldEditCtrl',
+       controllerAs:'editField'
+   })
+   .when('/field/delete/:idSection/:index',{
+       controller:'FieldDeleteCtrl',
+       templateUrl: 'templates/delete-confirmation.html',
        controllerAs:'editField'
    })
    .when('/section/add/:idParentSection',{

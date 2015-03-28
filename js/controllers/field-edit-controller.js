@@ -1,56 +1,40 @@
 angular.module('PSFcreator')
-.controller('FieldEditCtrl',function($scope,$routeParams,$location){
+.controller('FieldEditCtrl',function($scope,$routeParams,$location,$window){
     var self = this;
+    self.fieldOrig={};
     self.field={};
     
-    debugger;
+    
     var nameSection = $routeParams.idSection;
     var idField = $routeParams.idField;
     
-    var section =$scope.findSectionName(nameSection);
-    if(section === 'undefined'){
-    alert('No se encontró una seccion con el nombre indicado');    
+    var index = $routeParams.index;
+    self.section =$scope.findSectionName(nameSection);
+    if(self.section === 'undefined'){
+        alert('No se encontró una seccion con el nombre indicado');    
+        $location('/');
     }
+    self.fieldOrig = self.section.fields[index];    
+    self.field = angular.copy(self.fieldOrig);
     
     
-    self.section = section;
-    var editField = section.findField(idField);
-    
-    if(editField === undefined){
-    
-        alert('No se encontró un field ' + idField);
-    }
-    
-    
-    
-    $scope.field = editField;
-    
-    
-    $scope.field.section = section;
-    
-    
-    $scope.field.oldField = editField.Nombre;
-    
-    $scope.field.updateField = function(){        
-        //self.section.fields.push(self.field);
+    self.save = function(){        
         
         debugger;
-        //alert("Voy a actualizar");
-        
-        var section = this.section;
-        var oldName  = this.oldField;
-        
-        delete this.section;
-        delete this.oldField;
-        
-        section.updateField('heyDude',this)
-        
+        if(true) {//si el field es valido
+            self.section.fields[index]= self.field;
+        }
         $location.path('/');
     }
     
-    $scope.field.cancel = function(){        
+    self.cancel = function(){  
+        angular.copy(self.fieldOrig,self.field);
         $location.path('/');
     }
-    
+    self.delete= function(){
+        if($window.confirm('Estás seguro de eliminar este campo')){            
+            self.section.fields = self.section.fields.splice(index,1);            
+        }
+    }
     
 });

@@ -1,9 +1,13 @@
-<tr>  
-  <td>{{nombre}}</td>
-  <td>{{tipo}}</td>
-  <td>
-        <div><a ng-href="#/field/edit/{{idsection}}/{{id}}"><span class="glyphicon glyphicon-pencil"></a></span>
-             <a ng-href=""><span class="glyphicon glyphicon-remove"></a></span>
+<tr>
+    <td>{{nombre}}</td>
+    <td>{{tipo}}</td>
+    <td>
+        <div>
+           <a ng-href="#/field/edit/{{idsection}}/{{index}}">
+           <span class="glyphicon glyphicon-pencil"></span></a>
+            
+            <a ng-href="#/field/delete/{{idsection}}/{{index}}">
+            <span class=" glyphicon glyphicon-remove "></span></a>
         </div>
   </td>
 </tr>

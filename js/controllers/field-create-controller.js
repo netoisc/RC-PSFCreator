@@ -1,7 +1,7 @@
 angular.module('PSFcreator')
-    .controller('FieldCreateCtrl', function ($scope, $routeParams, $location) {
+    .controller('FieldCreateCtrl', function ($scope, $routeParams, $location,Field) {
         var self = this;
-        self.field = {};
+        self.field = new Field('','','','','');
         var nameSection = $routeParams.idSection;
         self.section = $scope.findSectionName(nameSection);
         if (self.section === 'undefined') {

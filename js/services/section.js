@@ -16,10 +16,10 @@ angular.module('PSFcreator')
     Section.prototype.findField= function (fieldName){
         var fieldFound = undefined;
         var length = this.fields.length;
-        var stop = "";
+        
         for(var i = 0 ;i<length ; i++ ){
             
-            if(this.fields[i].Nombre=== fieldName){
+            if(this.fields[i].nombre=== fieldName){
                 fieldFound = this.fields[i];
             }
         }

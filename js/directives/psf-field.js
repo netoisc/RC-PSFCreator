@@ -8,7 +8,8 @@ angular.module('PSFcreator')
                 nombre: "=",
                 tipo: "=",
                 id: "=",
-                idsection:"="
+                idsection:"=",
+                index:"="
             }
 
         };
