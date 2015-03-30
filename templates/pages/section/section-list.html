@@ -34,55 +34,56 @@
                         </div>
                     </div>
                     <div class="row">
-                    <div class="panel panel-default">
-                        <!-- Default panel contents -->
-                        <div class="panel-heading">
-                            <h4>N&uacute;mero de fields:<span class="badge">{{section.fields.length}}</span>
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">
+                                <h4>N&uacute;mero de fields:<span class="badge">{{section.fields.length}}</span>
                             <a class="pull-right" href="#/field/create/{{section.name}}">Agregar Field</a>
                             </h4>
 
+                            </div>
+                            <!-- Table for fields-->
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Tipo</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr psf-tr-field ng-repeat="field in section.fields" nombre="field.name" tipo="field.type" id="field.name" index="$index" delete-callback="section.deleteField($index)" idsection="section.name">
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <!-- Table for fields-->
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Nombre</th>
-                                    <th>Tipo</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr psf-tr-field ng-repeat="field in section.fields" nombre="field.name" tipo="field.type" id="field.name" index="$index" deleteCallback="section.deleteField(field)" idsection="section.name">
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
-                    </div>
-                    <div class="row"> <!-- tabla for sections sons-->
-                       <div class="panel panel-default">
-                        <!-- Default panel contents -->
-                        <div class="panel-heading">
-                            <h4>N&uacute;mero de sections:<span class="badge">{{section.sections.length}}</span>
+                    <div class="row">
+                        <!-- tabla for sections sons-->
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">
+                                <h4>N&uacute;mero de sections:<span class="badge">{{section.sections.length}}</span>
                             <a class="pull-right" href="#/section/add/{{section.name}}">Agregar secci&oacute;n</a>
                             </h4>
 
+                            </div>
+                            <!-- Table for fields-->
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Numero de hijos</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr psf-tr-section ng-repeat="sect in section.sections" nombre="sect.name" hijos="sect.sections.length" id="sect.name">
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <!-- Table for fields-->
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Nombre</th>                                    
-                                    <th>Numero de hijos</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr psf-tr-section ng-repeat="sect in section.sections" nombre="sect.name" hijos="sect.sections.length" id="sect.name">
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                        
+
                     </div>
                 </div>
             </div>

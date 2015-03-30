@@ -9,7 +9,15 @@ angular.module('PSFcreator')
                 tipo: "=",
                 id: "=",
                 idsection:"=",
-                index:"="
+                index:"=",
+                deleteCallback:"&"
+            },
+            link: function(scope, element, attrs){
+                
+                element.find('a.deletable').on("click",function(){                    
+                    scope.deleteCallback();
+                    scope.$apply();
+                });
             }
 
         };
