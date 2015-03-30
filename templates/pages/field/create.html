@@ -34,80 +34,118 @@
         <label for="fieldInstrucctions">Description</label>
         <input type="text" ng-model="createField.field.description" class="form-control" id="fieldHelpText" placeholder="Pequeña descripción">
     </div>
+  
+  
+  <div class="panel-group" id="accordionValidator">
+         <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordionValidator" data-target="#section_Panel_Validators">
+                    Validators
+                    </a>                    
+                </h3>
+            </div>
+             <div id="section_Panel_Validators" class="panel-collapse collapse out">
+                <div class="panel-body">
+                     <div>
+                        
+                            <label for="" style="margin: 9px 0 5px;"> Validator: </label>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <select class="form-control" id="selectValidatorType">
+                                          <option value="required">required</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-3">
+                                <input type="text" class="form-control" id="validatorValue" placeholder="Valor"></div>
+                              <div class="col-sm-3">
+                                <input type="text" class="form-control" id="validatorMessage" placeholder="Mensaje de error"></div>
+                                <div class="col-sm-3"><button class="btn btn-primary pull-right" >Agregar Validator</button></div>
+                            </div>
+                        
+                    </div>
+                       
+                     <div class="row"> 
+                        <!-- Table for validators-->
+                      <table class="table">
+                          <thead>
+                              <tr>
+                                  <th>Validator</th>                                    
+                                  <th>Value</th>
+                                  <th>Message</th>
+                                  <th>Action</th>
+                              </tr>
+                          </thead>
+                          <tbody ng-repeat="validator in createField.field.validators">
+                              <!--tr psf-tr-section ng-repeat="sect in section.sections" nombre="sect.name" hijos="sect.sections.length" id="sect.name">
+                              </tr-->
+
+                              <tr>
+                                  <td>{{validator.type}}</td>                                    
+                                  <td>{{validator.value}}</td>                                                  
+                                  <td>{{validator.message}}</td>                                    
+                                  <td>Action</td>                                    
+                              </tr>
+                          </tbody>
+                      </table>
+                    </div>
+             </div>
+        </div>
+    </div>
+  </div>
+  
     
-     <!-- tabla for validators-->
-     <div class="row"> 
-         
-       <div class="panel panel-default">
-        <!-- Default panel contents -->
-        <div class="panel-heading">
-            <h4>N&uacute;mero de validators:<span class="badge">{{createField.field.validators.length}}</span>
-            <a class="pull-right" >Agregar validator</a>
-            </h4>
-
+    <div class="panel-group" id="accordionPromotion">
+         <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordionPromotion" data-target="#section_Panel_Promotions">
+                    Promotions
+                    </a>                    
+                </h3>
+            </div>
+             <div id="section_Panel_Promotions" class="panel-collapse collapse out">
+                <div class="panel-body">
+                     <div>
+                        
+                            <label for="" style="margin: 9px 0 5px;"> Item: </label>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="validatorValue" placeholder="Escriba el 'what'">
+                                </div>
+                                <div class="col-sm-4">
+                                <input type="text" class="form-control" id="validatorMessage" placeholder="Describa el 'as column'"></div>
+                                <div class="col-sm-4"><button class="btn btn-primary pull-right" >Agregar promotion</button></div>
+                            </div>
+                        
+                    </div>
+                       
+                     <div class="row"> 
+                        <!-- Table for promotions-->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>what</th>                                    
+                                    <th>asColumn</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody ng-repeat="promotion in createField.field.promotions">
+                                <!--tr psf-tr-section ng-repeat="sect in section.sections" nombre="sect.name" hijos="sect.sections.length" id="sect.name">
+                                </tr-->
+                                <tr>
+                                    <td>{{promotion.what}}</td>                                    
+                                    <td>Action</td>                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+             </div>
         </div>
-        <!-- Table for fields-->
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Validator</th>                                    
-                    <th>Value</th>
-                    <th>Message</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody ng-repeat="validator in createField.field.validators">
-                <!--tr psf-tr-section ng-repeat="sect in section.sections" nombre="sect.name" hijos="sect.sections.length" id="sect.name">
-                </tr-->
-
-                <tr>
-                    <td>{{validator.type}}</td>                                    
-                    <td>{{validator.value}}</td>                                                  
-                    <td>{{validator.message}}</td>                                    
-                    <td>Action</td>                                    
-                </tr>
-            </tbody>
-        </table>
-        </div>
-
+    </div>
     </div>
     
-    
-    <!-- tabla for promotions-->
-     <div class="row"> 
-         
-       <div class="panel panel-default">
-        <!-- Default panel contents -->
-        <div class="panel-heading">
-            <h4>N&uacute;mero de promotions:<span class="badge">{{createField.field.promotions.length}}</span>
-            <a class="pull-right" >Agregar promotion</a>
-            </h4>
-
-        </div>
-           
-        <!-- Table for fields-->
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>what</th>                                    
-                    <th>asColumn</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody ng-repeat="promotion in createField.field.promotions">
-                <!--tr psf-tr-section ng-repeat="sect in section.sections" nombre="sect.name" hijos="sect.sections.length" id="sect.name">
-                </tr-->
-
-                <tr>
-                    <td>{{promotion.what}}</td>                                    
-                    <td>{{promotion.asColumn}}</td>                                                  
-                    <td>Action</td>                                    
-                </tr>
-            </tbody>
-        </table>
-        </div>
-
-    </div>
+ 
 
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Salvar Field</button>
