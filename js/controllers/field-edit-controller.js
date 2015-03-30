@@ -7,6 +7,7 @@ angular.module('PSFcreator')
     
     var nameSection = $routeParams.idSection;
     var idField = $routeParams.idField;
+    var deleteParam = $routeParams.
     
     var index = $routeParams.index;
     self.section =$scope.findSectionName(nameSection);
