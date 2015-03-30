@@ -1,5 +1,5 @@
 angular.module('PSFcreator')
-.factory('Section',function(){
+.factory('Section',function($window){
     
     function Section(name, titulo, instrucciones) {
         var self = this;
@@ -25,6 +25,13 @@ angular.module('PSFcreator')
         }
         return fieldFound;
         
+    };
+    Section.prototype.deleteField = function(fieldIndex)
+    {        
+        var field = this.fields[fieldIndex];        
+        if($window.confirm('Estás seguro de eliminar este campo:'+ field.name)){             
+            this.fields.splice(fieldIndex,1);            
+        }
     };
     
     

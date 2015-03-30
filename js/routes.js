@@ -11,7 +11,7 @@ angular.module('PSFcreator').config(function($routeProvider){
        controllerAs:'createField'
    })
    .when('/field/edit/:idSection/:index',{
-       templateUrl: 'templates/pages/field/edit-field.html',
+       templateUrl: 'templates/pages/field/edit.html',
        controller:'FieldEditCtrl',
        controllerAs:'editField'
    })

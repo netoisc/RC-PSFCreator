@@ -1,9 +1,9 @@
 angular.module('PSFcreator')
 .factory('Field',function(){
     
-    function Field(id,type,name,displayName,helpText,description) {
+    function Field(type,name,displayName,helpText,description) {
         
-        this.type = type || new Error('type must initialize');
+        this.type = type || '';
         this.name = name;
         this.displayName = displayName || '';
         this.helpText = helpText || '';

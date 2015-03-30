@@ -8,6 +8,7 @@ angular.module('PSFcreator')
     var nameSection = $routeParams.idSection;
     var idField = $routeParams.idField;
     
+    
     var index = $routeParams.index;
     self.section =$scope.findSectionName(nameSection);
     if(self.section === 'undefined'){
@@ -18,9 +19,8 @@ angular.module('PSFcreator')
     self.field = angular.copy(self.fieldOrig);
     
     
-    self.save = function(){        
+    self.save = function(){                
         
-        debugger;
         if(true) {//si el field es valido
             self.section.fields[index]= self.field;
         }
@@ -31,10 +31,6 @@ angular.module('PSFcreator')
         angular.copy(self.fieldOrig,self.field);
         $location.path('/');
     }
-    self.delete= function(){
-        if($window.confirm('Estás seguro de eliminar este campo')){            
-            self.section.fields = self.section.fields.splice(index,1);            
-        }
-    }
+    
     
 });
