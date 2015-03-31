@@ -14,7 +14,7 @@ angular.module('PSFcreator')
   
   
   
-    Function.prototype.getValidatorsByType = function (){
+    Field.prototype.getValidatorsByType = function (){
       
       var simpleValidators = [];
       
@@ -23,16 +23,19 @@ angular.module('PSFcreator')
       switch(this.type.toUpperCase()){
           
             case 'TEXTTYPE':
-                 validators.push('minLength' ,'maxLength');
+                  simpleValidators.push('minLength' ,'maxLength', 'regEx');
+                 break;
             case 'DROPDOWNTYPE':
-                return validators.push('minLength', 'maxLength', 'regEx');
+                  simpleValidators.push('minLength', 'maxLength', 'regEx');
+                  break;
             case 'CFDITYPE':
             case 'FILETYPE':
-                return validators.push('fileExtension');
+                   simpleValidators.push('fileExtension');
+                  break;
             case 'DATETYPE':
             case 'DATETIMETYPE':
             case 'MULTILINETYPE':
-            default: ;
+            default:;
           
           
       }
