@@ -36,7 +36,7 @@
     </div>
   
   
-  <div class="panel-group" id="accordionValidator">
+  <div class="panel-group" id="accordionValidator" ng-controller="CreateValidatorController as createValidatorCtrl">
          <div class="panel panel-default">
               <div class="panel-heading">
                 <h3 class="panel-title">
@@ -51,7 +51,7 @@
                         <label for="" style="margin: 9px 0 5px;"> Validator: </label>
                         <div class="row">
                             <div class="col-sm-3">
-                                <select class="form-control" >
+                                <select class="form-control" ng-model="createValidatorCtrl.validatorType">
                                   <option ng-repeat=" v in createField.field.getValidatorsByType()"     value{{v}}>{{v}}</option>
                                 </select>
                             </div>
@@ -59,7 +59,7 @@
                             <input type="text" class="form-control" id="validatorValue" placeholder="Valor"></div>
                           <div class="col-sm-3">
                             <input type="text" class="form-control" id="validatorMessage" placeholder="Mensaje de error"></div>
-                            <div class="col-sm-3"><button class="btn btn-primary pull-right" >Agregar Validator</button></div>
+                            <div class="col-sm-3"><button ng-click="createValidatorCtrl.addValidatorToField(createField.field)" class="btn btn-primary pull-right" >Agregar Validator</button></div>
                         </div>
                         
                     </div>
@@ -75,11 +75,11 @@
                                   <th>Action</th>
                               </tr>
                           </thead>
-                          <tbody ng-repeat="validator in createField.field.validators">
+                          <tbody>
                               <!--tr psf-tr-section ng-repeat="sect in section.sections" nombre="sect.name" hijos="sect.sections.length" id="sect.name">
                               </tr-->
 
-                              <tr>
+                              <tr ng-repeat="validator in createField.field.validators">
                                   <td>{{validator.type}}</td>                                    
                                   <td>{{validator.value}}</td>                                                  
                                   <td>{{validator.message}}</td>                                    

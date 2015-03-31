@@ -8,7 +8,7 @@ angular.module('PSFcreator')
     var nameSection = $routeParams.idSection;
     var idField = $routeParams.idField;
     
-    
+    debugger;
     var index = $routeParams.index;
     self.section =$scope.findSectionName(nameSection);
     if(self.section === 'undefined'){
