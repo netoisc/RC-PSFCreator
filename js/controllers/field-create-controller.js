@@ -14,5 +14,16 @@ angular.module('PSFcreator')
         self.cancel = function () {
             $location.path('/');
         };
+    self.notContainsValidator=function(validatorType){        
+        var existe=false;
+        for(var i=0;i<self.field.validators.length;i++){
+            if(self.field.validators[i].type==validatorType)
+            {
+                existe=true;
+                break;
+            }
+        }
+        return  !existe;
+    }
 
     });

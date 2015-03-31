@@ -43,8 +43,7 @@ angular.module('PSFcreator')
       return simpleValidators;
       
     };
-    Field.prototype.addValidator = function(validator){
-        debugger;
+    Field.prototype.addValidator = function(validator){        
         this.validators.push(validator);
     };
     

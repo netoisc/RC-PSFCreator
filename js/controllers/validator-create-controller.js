@@ -1,12 +1,12 @@
 angular.module('PSFcreator')
-.controller('CreateValidatorController',function(){
+.controller('CreateValidatorController',function(Validator){
     var self= this;
-    self.validatorType ='';
-    self.validatorValue = '';
-    self.validatorMessage = '';
+    self.validator = new Validator('','','');    
   
-    this.addValidatorToField= function(field){
-        debugger;
-        field.addValidator(self.validatorType);
+    this.addValidatorToField= function(field){        
+        field.addValidator(self.validator);
+        self.validator=new Validator('','','');    
+        
     }
+    
 });

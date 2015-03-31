@@ -51,14 +51,14 @@
                         <label for="" style="margin: 9px 0 5px;"> Validator: </label>
                         <div class="row">
                             <div class="col-sm-3">
-                                <select class="form-control" ng-model="createValidatorCtrl.validatorType">
-                                  <option ng-repeat=" v in createField.field.getValidatorsByType()"     value{{v}}>{{v}}</option>
+                                <select class="form-control" ng-model="createValidatorCtrl.validator.type">
+                                  <option ng-repeat=" v in createField.field.getValidatorsByType() | filter:createField.notContainsValidator"     value{{v}}>{{v}}</option>
                                 </select>
                             </div>
                             <div class="col-sm-3">
-                            <input type="text" class="form-control" id="validatorValue" placeholder="Valor" model="createValidatorCtrl.validatorValue"></div>
+                            <input type="text" class="form-control" id="validatorValue" placeholder="Valor" ng-model="createValidatorCtrl.validator.value"></div>
                           <div class="col-sm-3">
-                            <input type="text" class="form-control" id="validatorMessage" placeholder="Mensaje de error" model="createValidatorCtrl.validatorMessage"></div>
+                            <input type="text" class="form-control" id="validatorMessage" placeholder="Mensaje de error" ng-model="createValidatorCtrl.validator.message"></div>
                             <div class="col-sm-3"><span ng-click="createValidatorCtrl.addValidatorToField(createField.field)" class="glyphicon glyphicon-plus" ></span></div>
                         </div>
                         
