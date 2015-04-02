@@ -1,30 +1,30 @@
 angular.module('PSFcreator').config(function($routeProvider){
     
    $routeProvider.when('/section/new',{
-       templateUrl: 'templates/pages/section/section-new.html',
+       templateUrl: 'templates/pages/section/createOrEdit.html',
        controller: 'CreateSectionCtrl',
-       controllerAs: 'newSection'
-   })   
-   .when('/field/create/:idSection',{
-       templateUrl: 'templates/pages/field/create.html',
-       controller:'FieldCreateCtrl',
-       controllerAs:'createField'
-   })
-   .when('/field/edit/:idSection/:index',{
-       templateUrl: 'templates/pages/field/edit.html',
-       controller:'FieldEditCtrl',
-       controllerAs:'editField'
-   })
-   .when('/field/delete/:idSection/:index',{
-       controller:'FieldDeleteCtrl',
-       templateUrl: 'templates/delete-confirmation.html',
-       controllerAs:'editField'
+       controllerAs: 'sectionCtrl'
    })
    .when('/section/add/:idParentSection',{
-       templateUrl: 'templates/pages/section/section-new.html',
+       templateUrl: 'templates/pages/section/createOrEdit.html',
        controller:'CreateSectionCtrl',
-       controllerAs:'newSection'
+       controllerAs:'sectionCtrl'
    })
+   .when('/section/edit/:idSection', {
+       templateUrl: 'templates/pages/section/createOrEdit.html',
+       controller:'CreateSectionCtrl',
+       controllerAs:'sectionCtrl'
+   })
+   .when('/field/create/:idSection',{
+       templateUrl: 'templates/pages/field/createOrEdit.html',
+       controller:'FieldCreateCtrl',
+       controllerAs:'fieldCtrl'
+   })
+   .when('/field/edit/:idSection/:index',{
+       templateUrl: 'templates/pages/field/createOrEdit.html',
+       controller:'FieldEditCtrl',
+       controllerAs:'fieldCtrl'
+   })   
    .when('/', {
        templateUrl:'templates/pages/section/section-list.html'       
    });
