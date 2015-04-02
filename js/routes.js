@@ -12,7 +12,7 @@ angular.module('PSFcreator').config(function($routeProvider){
    })
    .when('/section/edit/:idSection', {
        templateUrl: 'templates/pages/section/createOrEdit.html',
-       controller:'CreateSectionCtrl',
+       controller:'EditSectionCtrl',
        controllerAs:'sectionCtrl'
    })
    .when('/field/create/:idSection',{

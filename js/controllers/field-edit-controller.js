@@ -1,6 +1,5 @@
 angular.module('PSFcreator')
-.controller('FieldEditCtrl',function($scope,$routeParams,$location,$window){
-    debugger;
+.controller('FieldEditCtrl',function($scope,$routeParams,$location,$window){    
     var self = this;
     self.fieldOrig={};
     self.field={};

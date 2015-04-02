@@ -4,8 +4,7 @@ angular.module('PSFcreator')
         
         $scope.findSectionName = function (name) {
             var sections = $scope.psf.sections;
-            var sectionFound = findSectionInSections(sections, name);
-            return sectionFound;
+            return findSectionInSections(sections, name);            
         };
         function findSectionInSections(sections, name) {
             var sectFound = undefined;
@@ -13,9 +12,9 @@ angular.module('PSFcreator')
                 if (sections[i].name === name)
                     sectFound = sections[i];
             }
-            if (sectFound === 'undefined') {
+            if (sectFound === undefined) {
                 for (var i = 0; i < sections.length; i++) {
-                    sectFound = findSectionInSections(sections[i].sections);
+                    sectFound = findSectionInSections(sections[i].sections,name);
                     if (sectFound != 'undefined') {
                         break;
                     }

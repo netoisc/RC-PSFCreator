@@ -30,7 +30,14 @@
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <button class="btn btn-warning pull-right" ng-click="psf.deleteSection(section)">Eliminar esta secci&oacute;n</button>
+                           <div class="row pull-right">
+                            <button type="button" class="btn btn-default">
+                                <a class="glyphicon glyphicon-pencil" ng-href="#/section/edit/{{section.name}}">Editar</a>
+                            </button>
+                            <button type="button" class="btn btn-default" ng-click="psf.deleteSection(section)">
+                            <span class="glyphicon glyphicon-trash" ></span>Eliminar
+                            </button>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -78,7 +85,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr psf-tr-section ng-repeat="sect in section.sections" nombre="sect.name" hijos="sect.sections.length" id="sect.name">
+                                    <tr psf-tr-section ng-repeat="sect in section.sections" nombre="sect.name" hijos="sect.sections.length" id="sect.name" delete-callback="section.deleteSectionByName(sect.name)">
                                     </tr>
                                 </tbody>
                             </table>

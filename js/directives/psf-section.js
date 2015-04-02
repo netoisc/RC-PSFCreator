@@ -7,7 +7,8 @@ angular.module('PSFcreator')
             scope: {
                 nombre: "=",
                 hijos: "=",
-                id: "="
+                id: "=",
+                deleteCallback:"&"
             }
 
         };

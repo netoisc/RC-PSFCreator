@@ -6,7 +6,7 @@ angular.module('PSFcreator')
         this.save = function () {            
             if (idParentSection != '') {
                 var parentSection= $scope.findSectionName(idParentSection);
-                parentSection.sections.push(this.section);
+                parentSection.addChild(this.section);
             } else {
                 $scope.psf.addSectionParent(this.section);                
             }

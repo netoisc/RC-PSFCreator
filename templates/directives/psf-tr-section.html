@@ -1,9 +1,12 @@
-<tr>  
-  <td>{{nombre}}</td>
-  <td>{{hijos}}</td>
-  <td>
-        <div><a ng-href=""><span class="glyphicon glyphicon-pencil"></a></span>
-             <a ng-href=""><span class="glyphicon glyphicon-remove"></a></span>
-        </div>
-  </td>
+<tr>
+    <td>{{nombre}}</td>
+    <td>{{hijos}}</td>
+    <td>
+        <button type="button" class="btn btn-default">
+            <a class="glyphicon glyphicon-pencil" ng-href="#/section/edit/{{nombre}}">Editar</a>
+        </button>
+        <button type="button" class="btn btn-default" ng-click="deleteCallback()">
+            <span class="glyphicon glyphicon-trash"></span>Eliminar
+        </button>
+    </td>
 </tr>

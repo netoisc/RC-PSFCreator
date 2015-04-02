@@ -7,17 +7,10 @@ angular.module('PSFcreator')
         self.sections = [];
     }
     
-    PSF.prototype.deleteSection = function (section) {
-            var tmp = [];
-            if(section ==='undefined') return;
+    PSF.prototype.deleteSection = function (section) {            
             if (confirm('Estás seguro de eliminar la sección:' + section.name)) {
-                for (var i = this.sections.length - 1; i >= 0; i--) {
-                    debugger;
-                    if (this.sections[i] != section) {
-                        tmp.push(this.sections[i]);
-                    }
-                }
-                this.sections = tmp;
+                var indexSection= this.sections.indexOf(section);
+                this.sections.splice(indexSection,1);                
             }
         };
     PSF.prototype.hasSections = function () {
