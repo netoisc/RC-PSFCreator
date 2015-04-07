@@ -5,8 +5,7 @@ angular.module('PSFcreator')
     if($location.path() =='/'){ //secciones del psf
         self.sections = $scope.psf.sections;
     }
-    else {
-        debugger;
+    else {        
         var idsection= $routeParams.idSection;
         self.section = $scope.findSectionName(idsection);
         self.sections = self.section.sections;

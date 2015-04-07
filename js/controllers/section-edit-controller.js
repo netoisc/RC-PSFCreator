@@ -19,11 +19,4 @@ angular.module('PSFcreator')
         $location.path('/');
     };
     
-    function createNavigationPath(){
-        var linkStr='';
-        for(var int =0;i< self.section.length;i++){
-            linkStr +='<a href="">';
-        }
-        return linkStr;
-    }
 });

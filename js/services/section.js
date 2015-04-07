@@ -15,7 +15,7 @@ angular.module('PSFcreator')
 
         Section.prototype.addChild= function(section){
             if(true){ //si la sección es válida
-                section.parent= this.name;
+                section.parent= this;
                 this.sections.push(section);
             }
         };
