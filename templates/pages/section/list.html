@@ -1,9 +1,9 @@
 <div id="sectionList" class="row">
     <header>
-        <h2 ng-if="psf.hasSections()">Secciones</h2>
+        <h2 ng-if="listSectionCtrl.sections.length>0">Secciones</h2>
     </header>
     <div class="panel-group" id="accordion">
-        <div class="panel panel-default" ng-repeat="section in psf.sections">
+        <div class="panel panel-default" ng-repeat="section in listSectionCtrl.sections">
             <div class="panel-heading">
                 <h3 class="panel-title">
                 <span>{{$index}} - Secci&oacute;n: </span>
@@ -34,7 +34,7 @@
                             <button type="button" class="btn btn-default">
                                 <a class="glyphicon glyphicon-pencil" ng-href="#/section/edit/{{section.name}}">Editar</a>
                             </button>
-                            <button type="button" class="btn btn-default" ng-click="psf.deleteSection(section)">
+                            <button type="button" class="btn btn-default" ng-click="section.deleteSectionByName({{section.name}})">
                             <span class="glyphicon glyphicon-trash" ></span>Eliminar
                             </button>
                             </div>

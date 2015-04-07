@@ -2,7 +2,7 @@ angular.module('PSFcreator')
 .controller('EditSectionCtrl',function($scope, $routeParams, $location, Section){
     var self = this;
     var idSection = $routeParams.idSection;
-    
+    self.title = "Edición de sección";
     if(idSection){
         self.section = $scope.findSectionName(idSection);
         self.sectionOrig = angular.copy(self.section);

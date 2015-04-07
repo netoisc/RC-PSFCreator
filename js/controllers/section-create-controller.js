@@ -2,7 +2,8 @@ angular.module('PSFcreator')
     .controller('CreateSectionCtrl', function ($scope, $routeParams, $location, Section) {
         this.section = new Section('', '', '');        
         var idParentSection = $routeParams.idParentSection || '';
-
+        this.title = "Creación de sección";
+        
         this.save = function () {            
             if (idParentSection != '') {
                 var parentSection= $scope.findSectionName(idParentSection);

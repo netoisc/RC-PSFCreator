@@ -15,6 +15,11 @@ angular.module('PSFcreator').config(function($routeProvider){
        controller:'EditSectionCtrl',
        controllerAs:'sectionCtrl'
    })
+   .when('/section/detail/:idSection',{
+         templateUrl:'templates/pages/section/detail.html',
+         controller:'ListSectionCtrl',
+         controllerAs:'listSectionCtrl'
+         })
    .when('/field/create/:idSection',{
        templateUrl: 'templates/pages/field/createOrEdit.html',
        controller:'FieldCreateCtrl',
@@ -26,7 +31,9 @@ angular.module('PSFcreator').config(function($routeProvider){
        controllerAs:'fieldCtrl'
    })   
    .when('/', {
-       templateUrl:'templates/pages/section/section-list.html'       
+       templateUrl:'templates/pages/section/list.html',
+       controller:'ListSectionCtrl',
+       controllerAs:'listSectionCtrl'
    });
 
 

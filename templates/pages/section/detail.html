@@ -1,0 +1,28 @@
+<h2>Detalle de la sección: {{listSectionCtrl.section.name}}</h2>
+<div class="row">
+    <div class="col-sm-6">
+        <div>
+            <span>Nombre: </span>
+            <label>{{listSectionCtrl.section.name}}</label>
+        </div>
+        <div>
+            <span>T&iacute;tulo: </span>
+            <label>{{listSectionCtrl.section.titulo}}</label>
+        </div>
+        <div>
+            <span>Instrucciones: </span>
+            <p>{{listSectionCtrl.section.instrucciones}}</p>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="row">
+            <button type="button" class="btn btn-default">
+                <a href="#/section/add/{{listSectionCtrl.section.name}}">Agregar secci&oacute;n</a>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="row" ng-include src="'templates/pages/section/list.html'">
+
+
+</div>
