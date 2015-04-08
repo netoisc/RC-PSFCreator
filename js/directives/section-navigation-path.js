@@ -5,7 +5,7 @@ angular.module("PSFcreator")
             scope: {
                 section: "="
             },
-            template: "<ul id='navigatorPath'><li ng-repeat='parent in parents' style='display:inline;'><a class='glyphicon glyphicon-menu-right' href='#/section/detail/{{parent.name}}'>{{parent.name}}</a><span></span></li> </ul>",
+            template: "<ul class='breadcrumb'><li ng-repeat='parent in parents' style='display:inline;'><span class='glyphicon glyphicon-triangle-right' aria-hidden='true'></span> <a  href='#/section/detail/{{parent.name}}'>{{parent.name}}</a>           </li> </ul>",
             controller: function ($scope) {
                 
                 function createNavigationPath() {
@@ -15,6 +15,7 @@ angular.module("PSFcreator")
                         parents.push(current);
                         current = current.parent;
                     }
+                    //Los devolvemos con reverse para mostrar el primer parent a la derecha.
                     return parents.reverse();
                 }
                 $scope.parents = createNavigationPath();

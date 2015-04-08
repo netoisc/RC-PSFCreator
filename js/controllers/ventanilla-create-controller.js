@@ -15,7 +15,7 @@ angular.module('PSFcreator')
             if (sectFound === undefined) {
                 for (var i = 0; i < sections.length; i++) {
                     sectFound = findSectionInSections(sections[i].sections,name);
-                    if (sectFound != 'undefined') {
+                    if (sectFound != undefined) {
                         break;
                     }
                 }
