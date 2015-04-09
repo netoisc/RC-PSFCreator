@@ -32,7 +32,7 @@ angular.module('PSFcreator').config(function($routeProvider){
    })   
    .when('/', {
        templateUrl:'templates/pages/psf.html',
-       controller:'ListSectionCtrl',
+       controller:'PSFCreateController',
        controllerAs:'listSectionCtrl'
    });
 

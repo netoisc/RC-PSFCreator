@@ -1,5 +1,5 @@
 angular.module('PSFcreator')
-    .controller('CreateVentanillaController', function ($scope, PSF, $window) {
+    .controller('MainController', function ($scope, PSF, $window) {
         $scope.psf = new PSF('Primer ventanilla', 'prueba');
         
         $scope.findSectionName = function (name) {
