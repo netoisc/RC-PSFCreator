@@ -19,6 +19,6 @@ angular.module('PSFcreator')
             $window.history.back();
         };
         this.cancel = function () {
-            $location.path('/');
+            $window.history.back();
         };
     });

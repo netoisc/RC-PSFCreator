@@ -1,0 +1,89 @@
+<div class="col-sm-12">
+    <div class="row">
+        <div class="col-sm-6">
+            <span class="label label-primary">Informaci&oacute;n de: <strong>{{section.name}}</strong></span>
+            <!--Informacion de header-->
+            <div>
+                <span>Nombre: </span>
+                <label>{{section.name}}</label>
+            </div>
+            <div>
+                <span>T&iacute;tulo: </span>
+                <label>{{section.titulo}}</label>
+            </div>
+            <div>
+                <span>Instrucciones: </span>
+                <p>{{section.instrucciones}}</p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="btn-group-vertical pull-right" role="group">
+                <button type="button" class="btn btn-default">
+                    <a href="#/section/add/{{section.name}}">Agregar secci&oacute;n</a>
+                </button>
+                <button type="button" class="btn btn-default">
+                    <a class="glyphicon glyphicon-pencil" ng-href="#/section/edit/{{section.name}}">Editar</a>
+                </button>
+                <button type="button" class="btn btn-warning" ng-click="deleteSectionCallback()">
+                    <span class="glyphicon glyphicon-trash"></span>Eliminar
+                </button>
+            </div>
+
+        </div>
+        <!--Información de fields y secciones hijas-->
+    </div>
+    <div class="row">
+        <div class="row">
+            <!-- Información de fields-->
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">
+                    <h4>N&uacute;mero de campos: <span class="badge">{{section.fields.length}}</span>
+                            <a class="pull-right" href="#/field/create/{{section.name}}">Agregar campo</a>
+                            </h4>
+
+                </div>
+                <!-- Table for fields-->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Tipo</th>
+                            <th>Acci&oacute;n</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr psf-tr-field ng-repeat="field in section.fields" nombre="field.name" tipo="field.type" id="field.name" index="$index" delete-callback="section.deleteField($index)" idsection="section.name">
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <!-- Información de secciones hijas-->
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">
+                    <h4>N&uacute;mero de secciones (hijas): <span class="badge">{{section.sections.length}}</span></h4>
+
+                </div>
+                <!-- Table for fields-->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>&#35;Secciones</th>
+                            <th>Acci&oacute;n</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr psf-tr-section ng-repeat="sect in section.sections" nombre="sect.name" hijos="sect.sections.length" id="sect.name" delete-callback="section.deleteSectionByName(sect.name)">
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>

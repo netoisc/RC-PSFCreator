@@ -1,0 +1,43 @@
+<h2>PSF</h2>
+<div class="row">
+    <form role="form" class="col-sm-6">
+        <div class="form-group">
+            <label for="psfName">Nombre:</label>
+            <input type="text" name="psfName" class="form-control" value="{{psf.name}}" />
+        </div>
+        <div class="form-group">
+            <label for="psfTitulo">Titulo:</label>
+            <input type="text" class="form-control" name="psfTitulo" value={{psf.title}} />
+        </div>
+    </form>
+    <div class="col-sm-6">
+        <div class="btn-group-vertical" role="group">
+            <button type="button" class="btn btn-default">
+                <a href="#/section/new">Agregar secci&oacute;n</a>
+            </button>
+            <button type="button" class="btn btn-default">
+                <a href="#/section/new" class="white">Guardar</a>
+            </button>
+        </div>
+    </div>
+</div>
+<div id="sectionList" class="row">
+    <header>
+        <h3 ng-if="listSectionCtrl.sections.length>0">Secciones</h3>
+    </header>
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default" ng-repeat="section in listSectionCtrl.sections">
+            <div class="panel-heading" style="cursor:pointer;" data-toggle="collapse" data-parent="#accordion" data-target="#section_Panel_{{$index}}">
+                <h3 class="panel-title">
+                <span>{{$index}} - Secci&oacute;n: {{section.name}}</span>                
+                </h3>
+            </div>
+            <div id="section_Panel_{{$index}}" class="panel-collapse collapse out">
+                <div class="panel-body">
+                    <section-detail section="section" deleteSectionCallback="listSectionCtrl.deleteSection(section)"></section-detail>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

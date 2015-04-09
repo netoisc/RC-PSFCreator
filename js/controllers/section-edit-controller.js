@@ -1,5 +1,5 @@
 angular.module('PSFcreator')
-.controller('EditSectionCtrl',function($scope, $routeParams, $location, Section){
+.controller('EditSectionCtrl',function($scope, $routeParams, $location, Section, $window){
     var self = this;
     var idSection = $routeParams.idSection;
     self.title = "Edición de sección";
@@ -11,12 +11,12 @@ angular.module('PSFcreator')
         if(true) {//si el field es valido            
         }
         
-        $location.path('/');
+        $window.history.back();
     };
     this.cancel= function(){
         //devolver la section original         
         angular.copy(self.sectionOrig, self.section);
-        $location.path('/');
+        $window.history.back();
     };
     
 });

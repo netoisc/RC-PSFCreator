@@ -1,5 +1,5 @@
 angular.module('PSFcreator')
-    .controller('FieldCreateCtrl', function ($scope, $routeParams, $location,Field) {
+    .controller('FieldCreateCtrl', function ($scope, $routeParams, $location,Field,$window) {
         var self = this;
     
         self.field = new Field('','','','','');
@@ -12,10 +12,10 @@ angular.module('PSFcreator')
         //functions
         self.save = function () {            
             self.section.fields.push(self.field);
-            $location.path('/');
+            $window.history.back();
         };
         self.cancel = function () {
-            $location.path('/');
+            $window.history.back();
         };
     
 

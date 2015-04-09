@@ -23,12 +23,12 @@ angular.module('PSFcreator')
         if(true) {//si el field es valido
             self.section.fields[index]= self.field;
         }
-        $location.path('/');
+        $window.history.back();
     }
     
     self.cancel = function(){  
         angular.copy(self.fieldOrig,self.field);
-        $location.path('/');
+        $window.history.back();
     }
     
     

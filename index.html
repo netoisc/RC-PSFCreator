@@ -50,32 +50,10 @@
     </nav>
 
     <div class="container">
-        <div class="main row col-sm-12">
-            <div class="row">
-                <h2 class="col-sm-12">Crear nuevo PSF</h2>
-            </div>
-            <div class="row">
-                <form role="form" class="col-sm-6">
-                    <div class="form-group">
-                        <label for="psfName">Nombre:</label>
-                        <input type="text" name="psfName" class="form-control" value="{{psf.name}}" />
-                    </div>
-                    <div class="form-group">
-                        <label for="psfTitulo">Titulo:</label>
-                        <input type="text" class="form-control" name="psfTitulo" value={{psf.title}} />
-                    </div>
-                </form>
-                <div class="col-sm-6">
-                    <div class="row">
-                    <button type="button" class="btn btn-default">
-                        <a href="#/section/new">Agregar secci&oacute;n</a>
-                    </button>
-                    </div>
-                </div>
-
-            </div>
+        <div class="main row col-sm-12">            
+               <p>Herramienta para crear Archivos de PSF</p>                
         </div>
-        <div ng-view>
+        <div ng-view class="col-sm-12">
 
         </div>
 
@@ -95,6 +73,7 @@
     <script type="text/javascript" src="/js/directives/psf-field.js"></script>
     <script type="text/javascript" src="/js/directives/psf-section.js"></script>
     <script type="text/javascript" src="/js/directives/section-navigation-path.js"></script>
+    <script type="text/javascript" src="/js/directives/section-detail.js"></script>
 
     <!--Services-->
     <script type="text/javascript" src="/js/services/psf.js"></script>

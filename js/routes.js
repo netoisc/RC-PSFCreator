@@ -31,7 +31,7 @@ angular.module('PSFcreator').config(function($routeProvider){
        controllerAs:'fieldCtrl'
    })   
    .when('/', {
-       templateUrl:'templates/pages/section/list.html',
+       templateUrl:'templates/pages/psf.html',
        controller:'ListSectionCtrl',
        controllerAs:'listSectionCtrl'
    });

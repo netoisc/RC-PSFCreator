@@ -2,14 +2,7 @@
     <td>{{nombre}}</td>
     <td>{{hijos}}</td>
     <td>
-        <button type="button" class="btn btn-default">
-            <a class="glyphicon glyphicon-pencil" ng-href="#/section/edit/{{nombre}}">Editar</a>
-        </button>
-        <button type="button" class="btn btn-default">
-            <a class="glyphicon glyphicon-pencil" ng-href="#/section/detail/{{nombre}}">Detalle</a>
-        </button>
-        <button type="button" class="btn btn-default" ng-click="deleteCallback()">
-            <span class="glyphicon glyphicon-trash"></span>Eliminar
-        </button>        
+        <a class="glyphicon glyphicon-pencil" ng-href="#/section/detail/{{nombre}}"></a>
+        <span class="glyphicon glyphicon-trash" ng-click="deleteCallback()"></span>
     </td>
 </tr>
