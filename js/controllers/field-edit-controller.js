@@ -14,6 +14,7 @@ angular.module('PSFcreator')
         alert('No se encontró una seccion con el nombre indicado');    
         $location('/');
     }
+    self.title= 'Editar Campo para: ' + self.section.name;
     self.fieldOrig = self.section.fields[index];    
     self.field = angular.copy(self.fieldOrig);
     

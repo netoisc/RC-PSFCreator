@@ -18,6 +18,16 @@
         .main {
             padding: 40px 15px;
         }
+        
+        .css-form input.ng-invalid.ng-touched {
+            background-color: rgba(203, 9, 9, 0.71);
+        }
+        .css-form textarea.ng-invalid.ng-touched {
+            background-color: rgba(203, 9, 9, 0.71);
+        }
+        .css-form input.ng-valid.ng-touched {
+            background-color: #a0e0a8;
+        }
     </style>
 
     <!--[if IE]>
@@ -50,8 +60,8 @@
     </nav>
 
     <div class="container">
-        <div class="main row col-sm-12">            
-               <p>Herramienta para crear Archivos de PSF</p>                
+        <div class="main row col-sm-12">
+            <p>Herramienta para crear Archivos de PSF</p>
         </div>
         <div ng-view class="col-sm-12">
 
@@ -88,7 +98,7 @@
     <script type="text/javascript" src="/js/controllers/section-edit-controller.js"></script>
     <script type="text/javascript" src="/js/controllers/section-list-controller.js"></script>
     <script type="text/javascript" src="/js/controllers/field-create-controller.js"></script>
-    <script type="text/javascript" src="/js/controllers/field-edit-controller.js"></script>    
+    <script type="text/javascript" src="/js/controllers/field-edit-controller.js"></script>
     <script type="text/javascript" src="/js/controllers/validator-create-controller.js"></script>
 </body>
 
