@@ -16,17 +16,17 @@
                 <a href="#/section/new">Agregar secci&oacute;n</a>
             </button>
             <button type="button" class="btn btn-default">
-                <a href="#/section/new" class="white">Guardar</a>
+                <a href="#/psf/save" class="white">Guardar</a>
             </button>
         </div>
     </div>
 </div>
 <div id="sectionList" class="row">
     <header>
-        <h3 ng-if="listSectionCtrl.sections.length>0">Secciones</h3>
+        <h3 ng-if="sections.length>0">Secciones</h3>
     </header>
     <div class="panel-group" id="accordion">
-        <div class="panel panel-default" ng-repeat="section in listSectionCtrl.sections">
+        <div class="panel panel-default" ng-repeat="section in sections">
             <div class="panel-heading" style="cursor:pointer;" data-toggle="collapse" data-parent="#accordion" data-target="#section_Panel_{{$index}}">
                 <h3 class="panel-title">
                 <span>{{$index}} - Secci&oacute;n: {{section.name}}</span>                
@@ -34,7 +34,7 @@
             </div>
             <div id="section_Panel_{{$index}}" class="panel-collapse collapse out">
                 <div class="panel-body">
-                    <section-detail section="section" delete-section-callback="listSectionCtrl.deleteSection(section)"></section-detail>
+                    <section-detail section="section" delete-section-fnc="deleteSection(section)"></section-detail>
                 </div>
             </div>
 

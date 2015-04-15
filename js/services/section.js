@@ -9,13 +9,13 @@ angular.module('PSFcreator')
             self.sections = [];
             self.fields = [];
             //behaviors
-            self.parent =undefined;
-            
+            self.parent = undefined;
+
         }
 
-        Section.prototype.addChild= function(section){
-            if(true){ //si la sección es válida
-                section.parent= this;
+        Section.prototype.addChild = function (section) {
+            if (true) { //si la sección es válida
+                section.parent = this;
                 this.sections.push(section);
             }
         };
@@ -46,10 +46,8 @@ angular.module('PSFcreator')
             var index = 0;
             for (index = 0; index < this.sections.length; index++) {
                 if (this.sections[index].name === sectionName) {
-                    if (confirm('Estás seguro de eliminar la sección: ' + sectionName)) {
-                        this.sections.splice(index, 1);
-                        break;
-                    }
+                    this.sections.splice(index, 1);
+                    break;
                 }
             }
 

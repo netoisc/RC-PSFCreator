@@ -1,9 +1,9 @@
 angular.module('PSFcreator')
-.controller('PSFCreateController',function($scope,$window){
+.controller('PSFEditController',function($scope,$window){
     var self= this;
-    self.sections = $scope.psf.sections;
+    $scope.sections = $scope.psf.sections;
     
-    this.deleteSection= function(section){
+    $scope.deleteSection= function(section){
         if($window.confirm('Estás seguro de eliminar la sección:'+ section.name)){
             $scope.psf.deleteSection(section);
         }

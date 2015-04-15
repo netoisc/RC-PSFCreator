@@ -1,7 +1,7 @@
-<div class="row" ng-if="listSectionCtrl.section.parent">
+<div class="row" ng-if="currentSection.parent">
     <p>Secciones previas:        
     </p>
-    <section-navigation-path section="listSectionCtrl.section"></section-navigation-path>
+    <section-navigation-path section="currentSection"></section-navigation-path>
 </div>
 
-<section-detail section="listSectionCtrl.section" deleteSectionCallback="listSectionCtrl.section.deleteSection(listSectionCtrl.section)"></section-detail>
+<section-detail section="currentSection" delete-section-fnc="deleteSection()"></section-detail>

@@ -24,7 +24,7 @@
                 <button type="button" class="btn btn-default">
                     <a class="glyphicon glyphicon-pencil" ng-href="#/section/edit/{{section.name}}">Editar</a>
                 </button>
-                <button type="button" class="btn btn-warning" ng-click="deleteSectionCallback()">
+                <button type="button" class="btn btn-warning" ng-click="deleteSectionFnc()">
                     <span class="glyphicon glyphicon-trash"></span>Eliminar
                 </button>
             </div>
@@ -78,7 +78,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr psf-tr-section ng-repeat="sect in section.sections" nombre="sect.name" hijos="sect.sections.length" id="sect.name" delete-callback="section.deleteSectionByName(sect.name)">
+                        <tr psf-tr-section ng-repeat="sect in section.sections" nombre="sect.name" hijos="sect.sections.length" id="sect.name" delete-callback="deleteChildSection(sect.name)">
                         </tr>
                     </tbody>
                 </table>
