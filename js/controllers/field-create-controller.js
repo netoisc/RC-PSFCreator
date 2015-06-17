@@ -2,20 +2,22 @@ angular.module('PSFcreator')
     .controller('FieldCreateCtrl', function ($scope, $routeParams, $location,Field,$window) {
         var self = this;
         
-        self.field = new Field('','','','','');
+        $scope.field = new Field('','','','','');
     
         var nameSection = $routeParams.idSection;
-        self.section = $scope.findSectionName(nameSection);
+        $scope.section = $scope.findSectionName(nameSection);
         if (self.section === 'undefined') {
             alert('No se encontró una sección con el nombre: ' + nameSection);
         }
-        self.title= 'Crear Campo para: ' + self.section.name;
+        $scope.title= 'Crear Campo para: ' + $scope.section.name;
         //functions
-        self.save = function () {            
-            self.section.fields.push(self.field);
+        $scope.save = function () {            
+            $scope.section.fields.push($scope.field);
+            //se avisa del object creado
+            $scope.$emit('objectAdded',this.field.name);
             $window.history.back();
         };
-        self.cancel = function () {
+        $scope.cancel = function () {
             $window.history.back();
         };
     

@@ -1,20 +1,22 @@
 <div class="row">
-    <h3>{{sectionCtrl.title}}</h3>
+    <h3>{{title}}</h3>
 
-    <form role="form" name="frmSection" class="css-form" novalidate ng-submit="frmSection.$valid && sectionCtrl.save()">
+    <form role="form" name="frmSection" class="css-form" novalidate ng-submit="frmSection.$valid && save()">
         <div class="form-group">
-            <label for="psfSectionNameModal">Nombre</label>
-            <input type="text" class="form-control" id="psfSectionNameModal" placeholder="Nombre de la sección" required ng-model="sectionCtrl.section.name">
+            <label for="name">Nombre</label>
+            <input type="text" class="form-control" placeholder="Nombre de la sección" required ng-model="section.name" name="name" uniquename>
+            <span ng-show="frmSection.name.$pending.uniquename">Verificando si el nombre está disponible...</span>
+    <span ng-show="frmSection.name.$error.uniquename">El nombre ya ha sido utilizado!</span>
         </div>
         <div class="form-group">
             <label for="psfSectionTitleModal">Título</label>
-            <input type="text" class="form-control" id="psfSectionTitleModal" placeholder="Título de la sección" ng-model="sectionCtrl.section.titulo" required>
+            <input type="text" class="form-control" placeholder="Título de la sección" ng-model="section.titulo" required>
         </div>
         <div class="form-group">
             <label for="psfSectionInstrucctionsModal">Instrucciones</label>            
-            <textarea class="form-control" type="text" id="psfSectionInstrucctionsModal" placeholder="Escribe las instrucciones" ng-model="sectionCtrl.section.instrucciones" required></textarea>
+            <textarea class="form-control" type="text" id="psfSectionInstrucctionsModal" placeholder="Escribe las instrucciones" ng-model="section.instrucciones" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Salvar secci&oacute;n</button>
-        <button type="button" class="btn btn-default" ng-click="sectionCtrl.cancel()">Cancel</button>
+        <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
     </form>
 </div>

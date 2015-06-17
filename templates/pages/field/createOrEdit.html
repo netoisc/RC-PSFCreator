@@ -1,11 +1,10 @@
-<h3>{{fieldCtrl.title}}</h3>
+<h3>{{title}}</h3>
 
 
-<form role="form" name="frmField" novalidate ng-submit="frmField.&valid && fieldCtrl.save()">
-
+<form role="form" name="frmField" novalidate ng-submit="frmField.$valid && save()">
     <div class="form-group">
         <label for="selectFieldType">Tipo field</label>
-        <select class="form-control" id="selectFieldType" ng-model="fieldCtrl.field.type" required>
+        <select class="form-control" id="selectFieldType" ng-model="field.type" required>
             <option value="cfditype">CFDI</option>
             <option value="choiceType">Choice</option>
             <option value="dateType">Date</option>
@@ -17,24 +16,26 @@
     </div>
     <div class="form-group">
         <label for="fieldName">Nombre</label>
-        <input type="text" class="form-control" id="fieldName" ng-model="fieldCtrl.field.name" placeholder="Nombre del campo" required>
+        <input type="text" class="form-control" id="fieldName" name="name" ng-model="field.name" placeholder="Nombre del campo" required uniquename>
+        <span ng-show="frmField.name.$pending.uniquename">Verificando si el nombre está disponible...</span>
+        <span ng-show="frmField.name.$error.uniquename">El nombre ya ha sido utilizado!</span>
     </div>
     <div class="form-group">
         <label for="fieldDisplayName">Display Name</label>
-        <input type="text" ng-model="fieldCtrl.field.displayName" class="form-control" id="fieldDisplayName" placeholder="Nombre a desplegar en la forma" required>
+        <input type="text" ng-model="field.displayName" class="form-control" id="fieldDisplayName" placeholder="Nombre a desplegar en la forma" required>
     </div>
 
 
     <div class="form-group">
         <label for="fieldHelpText">Help Text</label>
-        <input type="text" ng-model="fieldCtrl.field.helpText" class="form-control" id="fieldHelpText" placeholder="Texto de ayudar" required>
+        <input type="text" ng-model="field.helpText" class="form-control" id="fieldHelpText" placeholder="Texto de ayudar" required>
     </div>
     <div class="form-group" id="divFieldDescription">
         <label for="fieldInstrucctions">Description</label>
-        <input type="text" ng-model="fieldCtrl.field.description" class="form-control" id="fieldHelpText" placeholder="Pequeña descripción" required>
+        <input type="text" ng-model="field.description" class="form-control" id="fieldHelpText" placeholder="Pequeña descripción" required>
     </div>
 
-
+    
     <div ng-if="(fieldCtrl.field.type!= '')" class="panel-group" id="accordionValidator" ng-controller="CreateValidatorController as createValidatorCtrl">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -95,7 +96,7 @@
         </div>
     </div>
 
-
+    
     <div ng-if="(fieldCtrl.field.type!= '')" class="panel-group" id="accordionPromotion">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -151,5 +152,5 @@
 
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Salvar Field</button>
-        <button type="button" class="btn btn-default" ng-click="fieldCtrl.cancel()">Cancel</button>
+        <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
     </div>

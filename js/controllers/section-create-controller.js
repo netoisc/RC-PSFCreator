@@ -1,14 +1,14 @@
 angular.module('PSFcreator')
     .controller('CreateSectionCtrl', function ($scope, $routeParams, $location, Section, $window) {
-        this.section = new Section('', '', '');
+        $scope.section = new Section('', '', '');
         var idParentSection = $routeParams.idParentSection || '';
         if (idParentSection === '') {
-            this.title = "Crear sección al psf";
+            $scope.title = "Crear sección al psf";
         } else {
-            this.title = "Agregar sección para:" + idParentSection;
+            $scope.title = "Agregar sección para:" + idParentSection;
         }
 
-        this.save = function () {
+        $scope.save = function () {
             if (idParentSection != '') {
                 var parentSection = $scope.findSectionName(idParentSection);
                 parentSection.addChild(this.section);
@@ -16,9 +16,10 @@ angular.module('PSFcreator')
                 $scope.psf.addSectionParent(this.section);
             }
             //$location.path('/');
+            $scope.$emit('objectAdded',this.section.name);
             $window.history.back();
         };
-        this.cancel = function () {
+        $scope.cancel = function () {
             $window.history.back();
         };
     });
